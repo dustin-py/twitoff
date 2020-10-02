@@ -13,17 +13,17 @@ def create_app():
 		return "Hello Twitoff"
 
 
-	@app.route("/adduser/<Id>/<username>/<followers>")
-	def add_user(Id, username, followers):
-		user = User(Id=Id,username=username, followers=followers)
+	@app.route("/adduser/<username>/<followers>")
+	def add_user(username, followers):
+		user = User(username=username, followers=followers)
 		DB.session.add(user)
 		DB.session.commit()
 		return f"{username} has been added to the DB."
 
 
-	@app.route("/addtweet/<user_id>/<tweet>")
-	def add_tweet(user_id, tweet): 
-		string = Tweet(user_id=user_id,tweet=tweet)
+	@app.route("/addtweet/<tweet>/<user_id>")
+	def add_tweet(tweet, user_id): 
+		string = Tweet(tweet=tweet, user_id=user_id)
 		DB.session.add(string)
 		DB.session.commit()
 		return f"{tweet}\nhas been added to the DB."
