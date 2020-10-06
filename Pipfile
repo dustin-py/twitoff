@@ -13,6 +13,7 @@ python-dotenv = "*"
 tweepy = "*"
 spacy = "*"
 nlp = "*"
+sklearn = "*"
 
 [requires]
 python_version = "3.8"
