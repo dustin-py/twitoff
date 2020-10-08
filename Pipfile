@@ -4,7 +4,6 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-jupyter = "*"
 
 [packages]
 flask = "*"
@@ -14,6 +13,8 @@ tweepy = "*"
 spacy = "*"
 nlp = "*"
 sklearn = "*"
+gunicorn = "*"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.8"
