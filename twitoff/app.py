@@ -1,3 +1,4 @@
+from os import getenv
 from flask import Flask, render_template, request
 from .db_model import DB, User
 from .twitter import add_user_tweepy, update_all_users
@@ -6,7 +7,8 @@ from .predict import predict_user
 def create_app():
     """Create and cnfigure an instance of the Flask app"""
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///twitoff.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URI')
+    # 'sqlite:///twitoff.db'
     DB.init_app(app)    
     
     
